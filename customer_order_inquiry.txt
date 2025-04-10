@@ -1,0 +1,25 @@
+example 1:
+</task>
+This customer (customer_id = 5) want to know all the items he ordered during past 60 days </task>
+
+<sql>
+SELECT 
+    od.order_detail_id,
+    od.order_id,
+    od.product_id,
+    p.product_name,
+    od.quantity,
+    od.price,
+    (od.quantity * od.price) AS total_price,
+    oh.order_date,
+    oh.total_amount
+FROM 
+    order_detail od
+JOIN 
+    order_head oh ON od.order_id = oh.order_id
+JOIN 
+    product p ON od.product_id = p.product_id
+WHERE 
+    oh.customer_id = 5
+    AND oh.order_date >= CURRENT_DATE - INTERVAL '60 days';
+</sql>

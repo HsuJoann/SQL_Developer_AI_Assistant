@@ -1,0 +1,1 @@
+the revenue aggregate by months and products for Prodct A and Produt B and for January and Feb 2025, and then pivot the result so that the columns represent products and the rows represent year-month

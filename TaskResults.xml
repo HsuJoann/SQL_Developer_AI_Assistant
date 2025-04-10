@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TaskResults><TaskInHand>customer Mike Smith (customer_id= 6) asks why his order contains some line he does not recognize</TaskInHand><CurrentCategory>customer_order_inquiry</CurrentCategory><SQLQuery>SELECT 
+    od.order_detail_id,
+    od.order_id,
+    od.product_id,
+    p.product_name,
+    od.quantity,
+    od.price,
+    (od.quantity * od.price) AS total_price,
+    oh.order_date,
+    oh.total_amount
+FROM 
+    order_detail od
+JOIN 
+    order_head oh ON od.order_id = oh.order_id
+JOIN 
+    product p ON od.product_id = p.product_id
+WHERE 
+    oh.customer_id = 6
+ORDER BY 
+    oh.order_date DESC;</SQLQuery><XMLResult>&lt;Results&gt;&lt;Row&gt;&lt;order_detail_id&gt;804&lt;/order_detail_id&gt;&lt;order_id&gt;5&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;3&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;32.97&lt;/total_price&gt;&lt;order_date&gt;2025-02-12 00:35:39.686747&lt;/order_date&gt;&lt;total_amount&gt;66.22&lt;/total_amount&gt;&lt;/Row&gt;&lt;Row&gt;&lt;order_detail_id&gt;204&lt;/order_detail_id&gt;&lt;order_id&gt;5&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;9&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;98.91&lt;/total_price&gt;&lt;order_date&gt;2025-02-12 00:35:39.686747&lt;/order_date&gt;&lt;total_amount&gt;66.22&lt;/total_amount&gt;&lt;/Row&gt;&lt;Row&gt;&lt;order_detail_id&gt;404&lt;/order_detail_id&gt;&lt;order_id&gt;5&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;3&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;32.97&lt;/total_price&gt;&lt;order_date&gt;2025-02-12 00:35:39.686747&lt;/order_date&gt;&lt;total_amount&gt;66.22&lt;/total_amount&gt;&lt;/Row&gt;&lt;Row&gt;&lt;order_detail_id&gt;604&lt;/order_detail_id&gt;&lt;order_id&gt;5&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;1&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;10.99&lt;/total_price&gt;&lt;order_date&gt;2025-02-12 00:35:39.686747&lt;/order_date&gt;&lt;total_amount&gt;66.22&lt;/total_amount&gt;&lt;/Row&gt;&lt;Row&gt;&lt;order_detail_id&gt;4&lt;/order_detail_id&gt;&lt;order_id&gt;5&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;7&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;76.93&lt;/total_price&gt;&lt;order_date&gt;2025-02-12 00:35:39.686747&lt;/order_date&gt;&lt;total_amount&gt;66.22&lt;/total_amount&gt;&lt;/Row&gt;&lt;Row&gt;&lt;order_detail_id&gt;104&lt;/order_detail_id&gt;&lt;order_id&gt;105&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;3&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;32.97&lt;/total_price&gt;&lt;order_date&gt;2025-02-07 17:51:13.323967&lt;/order_date&gt;&lt;total_amount&gt;110.86&lt;/total_amount&gt;&lt;/Row&gt;&lt;Row&gt;&lt;order_detail_id&gt;504&lt;/order_detail_id&gt;&lt;order_id&gt;105&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;6&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;65.94&lt;/total_price&gt;&lt;order_date&gt;2025-02-07 17:51:13.323967&lt;/order_date&gt;&lt;total_amount&gt;110.86&lt;/total_amount&gt;&lt;/Row&gt;&lt;Row&gt;&lt;order_detail_id&gt;304&lt;/order_detail_id&gt;&lt;order_id&gt;105&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;3&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;32.97&lt;/total_price&gt;&lt;order_date&gt;2025-02-07 17:51:13.323967&lt;/order_date&gt;&lt;total_amount&gt;110.86&lt;/total_amount&gt;&lt;/Row&gt;&lt;Row&gt;&lt;order_detail_id&gt;704&lt;/order_detail_id&gt;&lt;order_id&gt;105&lt;/order_id&gt;&lt;product_id&gt;1&lt;/product_id&gt;&lt;product_name&gt;Product A&lt;/product_name&gt;&lt;quantity&gt;7&lt;/quantity&gt;&lt;price&gt;10.99&lt;/price&gt;&lt;total_price&gt;76.93&lt;/total_price&gt;&lt;order_date&gt;2025-02-07 17:51:13.323967&lt;/order_date&gt;&lt;total_amount&gt;110.86&lt;/total_amount&gt;&lt;/Row&gt;&lt;/Results&gt;</XMLResult><TaskResults><TaskInHand>the revenue aggregate by months and products for Prodct A and Produt B and for January and Feb 2025, and then pivot the result so that the columns represent products and the rows represent year-month</TaskInHand><CurrentCategory>managerial_report</CurrentCategory><SQLQuery>WITH revenue_by_month_product AS (
+    SELECT 
+        TO_CHAR(order_head.order_date, 'YYYY-MM') AS year_month,
+        product.product_name,
+        SUM(order_detail.price * order_detail.quantity) AS revenue
+    FROM 
+        order_head
+    JOIN 
+        order_detail ON order_head.order_id = order_detail.order_id
+    JOIN 
+        product ON order_detail.product_id = product.product_id
+    WHERE 
+        product.product_name IN ('Product A', 'Product B')
+        AND order_head.order_date BETWEEN '2025-01-01' AND '2025-02-28'
+    GROUP BY 
+        TO_CHAR(order_head.order_date, 'YYYY-MM'), product.product_name
+)
+
+SELECT 
+    year_month,
+    COALESCE(MAX(CASE WHEN product_name = 'Product A' THEN revenue END), 0) AS "Product A",
+    COALESCE(MAX(CASE WHEN product_name = 'Product B' THEN revenue END), 0) AS "Product B"
+FROM 
+    revenue_by_month_product
+GROUP BY 
+    year_month
+ORDER BY 
+    year_month;</SQLQuery><XMLResult>&lt;Results&gt;&lt;Row&gt;&lt;year_month&gt;2025-01&lt;/year_month&gt;&lt;Product A&gt;4615.80&lt;/Product A&gt;&lt;Product B&gt;5310.47&lt;/Product B&gt;&lt;/Row&gt;&lt;Row&gt;&lt;year_month&gt;2025-02&lt;/year_month&gt;&lt;Product A&gt;5396.09&lt;/Product A&gt;&lt;Product B&gt;11670.44&lt;/Product B&gt;&lt;/Row&gt;&lt;/Results&gt;</XMLResult></TaskResults></TaskResults>

@@ -1,0 +1,56 @@
+Example 1: 
+<task> the total revenue of Product A </task>
+<sql>
+SELECT 
+    p.product_name,
+    SUM(od.price * od.quantity) AS total_revenue
+FROM 
+    product p
+JOIN 
+    order_detail od
+ON 
+    p.product_id = od.product_id
+WHERE 
+    p.product_name = 'Product A'
+GROUP BY 
+    p.product_name;
+
+</sql>
+
+Example 2: 
+
+ <task>the revenue aggregate by months and products, and then pivot the result so that the columns represent products and the rows represent year-month </task>
+
+
+ <sql>
+-- Aggregate revenue by year-month and product
+WITH revenue_by_month_product AS (
+    SELECT 
+        TO_CHAR(order_head.order_date, 'YYYY-MM') AS year_month,
+        product.product_name,
+        SUM(order_detail.price * order_detail.quantity) AS revenue
+    FROM 
+        order_head
+    JOIN 
+        order_detail ON order_head.order_id = order_detail.order_id
+    JOIN 
+        product ON order_detail.product_id = product.product_id
+    GROUP BY 
+        TO_CHAR(order_head.order_date, 'YYYY-MM'), product.product_name
+)
+
+-- Pivot the result
+SELECT 
+    year_month,
+    COALESCE(MAX(CASE WHEN product_name = 'Product A' THEN revenue END), 0) AS "Product A",
+    COALESCE(MAX(CASE WHEN product_name = 'Product B' THEN revenue END), 0) AS "Product B",
+    COALESCE(MAX(CASE WHEN product_name = 'Product C' THEN revenue END), 0) AS "Product C",
+    COALESCE(MAX(CASE WHEN product_name = 'Product D' THEN revenue END), 0) AS "Product D"
+FROM 
+    revenue_by_month_product
+GROUP BY 
+    year_month
+ORDER BY 
+    year_month;
+
+ </sql>
