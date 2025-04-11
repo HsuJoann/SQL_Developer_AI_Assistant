@@ -66,7 +66,7 @@ def simple_classify(X):
 
 if __name__ == "__main__":
     # Example usage
-    task_in_hand = read_file_content()
+    task_in_hand = read_file_content(r"C:\Users\jingh\python_code_folder\SQL_developer_AI_assistant\New_task.txt")
     print("Task in hand:", task_in_hand)
     category = simple_classify(task_in_hand)
     print("Category:", category)
